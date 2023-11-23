@@ -1,0 +1,199 @@
+// main: ../style.less
+
+.about-section{
+    padding-bottom: 200px;
+}
+.about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &.animated{
+        article{
+            h2{
+                translate: 0px 0px;
+                opacity: 1;
+            }
+            p:nth-child(2){
+                transition-delay: 0.1s;
+                translate: 0px 0px;
+                opacity: 1;
+            }
+            p:nth-child(3){
+                transition-delay: 0.2s;
+                translate: 0px 0px;
+                opacity: 1;
+            }
+        }
+        .img-section.animated{
+            :first-child{
+                translate: 0px -30px;
+                opacity: 1;
+            }
+            :last-child{
+                translate: -70px 130px;
+                opacity: 1;
+                transition-delay: 0.2s;
+            }
+    
+        }
+        button{
+            translate: 0px 0px;
+            opacity: 1;
+        }
+    }
+    article{
+        max-height: 480px;
+        max-width: 500px;
+        h2{
+            translate: -120% 0px;
+            opacity: 0;
+            transition: 0.3s;
+            text-align: start;
+        }
+        p{
+            translate: -120% 0px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+    }
+    .img-section{
+        margin-left: 50px;
+        display: flex;
+
+        :first-child{
+            width: 80%;
+            height: 80%;
+            opacity: 0;
+            transition: 0.3s;
+            translate: 0px 100%;
+        }
+        :last-child{
+            width: 80%;
+            height: 80%;
+            transition: 0.3s;
+            translate: -70px 100%;
+            opacity: 0;
+        }
+
+    }
+    button{
+        translate: 0px 220%;
+        opacity: 0;
+        transition: 0.3s;
+    }
+} 
+
+@media (max-width: 1600px){
+    .about{
+        flex-direction: column;
+        align-items: center;
+        
+        article{
+            max-width: 60%;
+            margin-bottom: 80px;
+            text-align: center;
+
+            h2{
+                text-align: center;
+            }
+        }
+        .img-section{
+            margin-left: 0px;
+            justify-content: space-around;
+            &.animated{
+                :first-child{
+                    translate: 40px 0px;
+                }
+                :last-child{
+                    translate: -40px 0px;
+                }
+            }
+            :first-child{
+                width: 45%;
+                height: 45%;
+                opacity: 0;
+                translate: -120% 50px;
+            }
+            :last-child{
+                width: 45%;
+                height: 45%;
+                translate: 120% 0px;
+                transition-delay: 0ms !important;
+            }
+        }
+    }
+}
+@media (max-width: 1200px){
+    .about{
+        article{
+            max-width: 80%;
+            text-align: center;
+            h2{
+                text-align: center;
+            }
+        }
+    }
+}
+@media (max-width: 968px){
+    .about{
+        article{
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 768px){
+    .about{
+        .img-section{
+            margin-top: 50px;
+            justify-content: space-around;
+
+            &.animated{
+                :first-child{
+                    translate: 0px 0px !important;
+                }
+                :last-child{
+                    translate: 0px 0px !important;
+                }
+            }
+            :first-child{
+                width: 50%;
+                height: 50%;
+                translate: -120% 0px ;
+            }
+            :last-child{
+                width: 50%;
+                height: 50%;
+                translate: 120% 0px ;
+            }
+        }
+    }
+}
+@media (max-width: 360px){
+    .about{
+        .img-section{
+            margin-top: 150px;
+            justify-content: space-around;
+
+            &.animated{
+                :first-child{
+                    translate: 0px 0px !important;
+                }
+                :last-child{
+                    translate: 0px 0px !important;
+                }
+            }
+            :first-child{
+                width: 50%;
+                height: 50%;
+                translate: -120% 0px ;
+            }
+            :last-child{
+                width: 50%;
+                height: 50%;
+                translate: 120% 0px ;
+            }
+        }
+    }
+}

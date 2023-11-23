@@ -1,0 +1,123 @@
+// main: ../style.less
+
+.team-section{
+    padding: 190px 0px;
+
+    .team{
+        .title-section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 150px;
+            translate: 0px 200%;
+            opacity: 0;
+            transition: 0.3s;
+            .primary-title{
+                width: 730px;
+            }
+            &.animated{
+                translate: 0px 0px;
+                opacity: 1;
+            }
+        }
+        .teammates-container{
+            display: flex;
+            
+            .teammate{
+                translate: 0px 120%;
+                opacity: 0;
+                transition: 0.3s;
+
+                img{
+                    width: 100%;
+                    margin-bottom: 40px;
+                    padding-right: 30px;
+                }
+                p{
+                    margin-bottom: 0px;
+                }
+                &:nth-child(even){
+                    margin-top: 70px;
+                }
+                &.animated{
+                    translate: 0px 0px;
+                    opacity: 1;
+
+                    &:nth-child(even){
+                        transition-delay: 0.2s;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .team-section{
+        .team{
+            .teammates-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .teammate{
+                    width: 300px;
+                    margin-bottom: 30px;
+                    translate: -120% 0px;
+
+                    img{
+                        width: 100%;
+                        margin-bottom: 40px;
+                        padding-right: 30px;
+                    }
+                    p{
+                        margin-bottom: 0px;
+                    }
+                    &:nth-child(even){
+                    translate: 120% 0px;
+                    margin-top: 0px !important;
+                    }
+                    &.animated{
+                        translate: 0px 0px;
+                        opacity: 1;
+    
+                        &:nth-child(even){
+                            transition-delay: 0s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px){
+    .team-section{
+        .team{
+            .title-section{
+                .primary-title{
+                    width: 100%;
+                }
+            }
+            .teammates-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .teammate{
+                    width: 60%;
+                    img{
+                        width: 100%;
+                        margin-bottom: 40px;
+                        padding-right: 30px;
+                    }
+                    p{
+                        margin-bottom: 0px;
+                    }
+                    &:nth-child(even){
+                        margin-top: 70px;
+                    }
+                }
+            }
+        }
+    }
+}

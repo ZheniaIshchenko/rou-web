@@ -1,0 +1,128 @@
+// main: ../style.less
+
+.intro{
+    padding-top: 190px;
+    padding-bottom: 200px;
+
+    .title-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transform: translate(0px, 200%);
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
+        &.animated{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+        .primary-title{
+            width:90%;
+            margin-bottom: 130px;
+        }
+    }
+    .items-container{
+        .item {
+            &.scroll-animation-item{
+                transform: translate(-120%, 0px);
+                opacity: 0;
+                
+                &.animated{
+                    transform: translate(0px, 0px);
+                    opacity: 1;
+                    transition: transform 0.3s, opacity 0.3s;          
+                      
+                    &.archive{
+                        transition-delay: 0.1s;
+                    }
+                    &.anchor{
+                        transition-delay: 0.2s;
+                    }
+                }
+            }
+
+        }
+        .item{
+            border: solid 6px;
+            border-radius: 18px;
+        }
+        .anchor {
+            border-color: #fcd7df;
+        }
+        .archive {
+            border-color: #c9f3e2;
+        }
+        .user {
+            border-color: #f2d5ba;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+    .intro{
+        padding-top: 100px;
+        .title-section{
+            .subprimary-title{
+                margin-bottom: 30px;
+            }
+            .primary-title{
+                width:90%;
+                margin-bottom: 90px;
+            }
+        }
+        .items-container{
+            flex-direction: column;
+            align-items: center;
+            .item {
+                &.scroll-animation-item{
+                    &.animated{
+                        &.archive{
+                            transition-delay: 0s;
+                        }
+                        &.anchor{
+                            transition-delay: 0s;
+                        }
+                    }
+                }
+    
+            }
+            .item{
+                height:500px;
+                width: 385px;
+                margin-bottom: 30px;
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .intro{
+        padding-top: 70px;
+        .title-section{
+            .subprimary-title{
+                margin-bottom: 30px;
+            }
+            .primary-title{
+                width:90%;
+                margin-bottom: 60px;
+            }
+        }
+        .items-container{
+            flex-direction: column;
+            align-items: center;
+            .item{
+                height:500px;
+                width: 100%;
+                margin-bottom: 30px;
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
